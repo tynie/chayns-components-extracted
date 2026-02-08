@@ -39,8 +39,41 @@ Each package has its own folder with one Markdown file per component:
 # Core components
 npm install @chayns-components/core
 
-# Additional packages
+# Additional components
+npm install @chayns-components/code-highlighter
 npm install @chayns-components/color-picker
 npm install @chayns-components/date
-# etc.
+npm install @chayns-components/devalue-slider
+npm install @chayns-components/emoji-input
+npm install @chayns-components/gallery
+npm install @chayns-components/maps
+npm install @chayns-components/navigation
+npm install @chayns-components/person-finder
+npm install @chayns-components/ranking
+npm install @chayns-components/scanner
+npm install @chayns-components/swipeable-wrapper
+npm install @chayns-components/textstring
+npm install @chayns-components/translation
+npm install @chayns-components/typewriter
+```
+
+## Verwendung
+
+Der PageProvider sorgt dafür, dass alle Deine Komponenten die richtigen Farben erhalten. Verwende den PageProvider einfach in der AppWrapper-Komponente, und alle Deine Komponenten, die von der App-Komponente ausgehen, profitieren davon.
+
+```bash
+import React from 'react';
+import { ChaynsProvider } from 'chayns-api';
+import { PageProvider } from '@chayns-components/core';
+import App from './App';
+
+const AppWrapper = () => (
+    <ChaynsProvider>
+        <PageProvider>
+            <App />
+        </PageProvider>
+    </ChaynsProvider>
+);
+
+export default AppWrapper;
 ```
